@@ -1,0 +1,77 @@
+[
+    {
+        "name": "nette/nette",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "http://github.com/nette/nette",
+            "reference": "f2bdae3b1fdf6f4b1cc1b706b63593b8ae926599"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://github.com/nette/nette/zipball/f2bdae3b1fdf6f4b1cc1b706b63593b8ae926599",
+            "reference": "f2bdae3b1fdf6f4b1cc1b706b63593b8ae926599",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "ext-iconv": "*",
+            "ext-tokenizer": "*"
+        },
+        "require-dev": {
+            "nette/tester": "@dev"
+        },
+        "suggest": {
+            "ext-mbstring": "*",
+            "ext-pdo": "*",
+            "ext-memcache": "*",
+            "ext-gd": "*",
+            "ext-fileinfo": "*"
+        },
+        "time": "2012-10-20 08:04:39",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.1-dev"
+            }
+        },
+        "installation-source": "source",
+        "autoload": {
+            "files": [
+                "Nette/loader.php"
+            ]
+        },
+        "license": [
+            "BSD-3-Clause",
+            "GPL-2.0",
+            "GPL-3.0"
+        ],
+        "authors": [
+            {
+                "name": "David Grudl",
+                "homepage": "http://davidgrudl.com"
+            },
+            {
+                "name": "Nette Community",
+                "homepage": "http://nette.org/contributors"
+            }
+        ],
+        "description": "Nette Framework - innovative framework for fast and easy development of secured web applications in PHP. Write less, have cleaner code and your work will bring you joy.",
+        "homepage": "http://nette.org",
+        "keywords": [
+            "templating",
+            "framework",
+            "database",
+            "dbal",
+            "debugging",
+            "mvc",
+            "micro",
+            "Forms",
+            "latte",
+            "neon",
+            "mailing",
+            "images"
+        ]
+    }
+]

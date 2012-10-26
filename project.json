@@ -1,0 +1,10 @@
+{
+  "name": "Nette-Grunt",
+  "title": "Nette sandbox with GruntJS",
+  "description": "Use GruntJS for minify JS & CSS",
+  "version": "1.0.0",
+  "author": {
+    "name": "chemiX",
+    "web": "http://iamchemix.com"
+  }
+}
