@@ -82,7 +82,7 @@ or JavaScript
 
 This is simple definition, grunt looks for block and create minified version js/screen.min.css and js/app.min.js
 
-tadaa run "grunt"
+tadaa run `grunt`
 
 Now we have minified versions, but not in templates
 
