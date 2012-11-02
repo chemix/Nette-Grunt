@@ -38,22 +38,23 @@ install [Composer](http://getcomposer.org)
 install [Grunt](http://gruntjs.com)
 
 clone repository
-git clone git://github.com/chemix/Nette-Grunt.git
+`git clone git://github.com/chemix/Nette-Grunt.git`
 
 download dependencies via composer
-composer.phar install
+`composer.phar install`
 
 Use
 ------------------------
 
 Edit project.json. In grunt.js update section 'usemin-handler'
-
+```JavaScript
 'usemin-handler': {
 	html: [
 		'app/templates/@layout.latte',
 		'app/templates/Registration/wizzard.latte',
 	]
 }
+```
 
 those files will be checked for script or link block definitions
 
