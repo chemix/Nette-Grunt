@@ -26,7 +26,8 @@ Grunt is a task-based command line build tool for JavaScript projects
 Concept
 ------------------------
 
-use Grunt for combine and minify CSS and JavaScript files for projects that runs on php - Nette
+use Grunt for combine and minify CSS and JavaScript files for projects that runs
+on php - Nette with brilliant method from [Yoeman](http://yeoman.io)
 
 
 
@@ -89,22 +90,22 @@ Now we have minified versions, but not in templates
 in BasePresenter we define version and mode for templates
 
 ```php
-		$this->template->version = $this->getConfig('site', 'version');
+$this->template->version = $this->getConfig('site', 'version');
 
-		if ($this->context->parameters['productionMode']){
-			// Production
-			$this->template->develMode = FALSE;
+if ($this->context->parameters['productionMode']){
+	// Production
+	$this->template->develMode = FALSE;
 
-		} else {
-			// Devel
-			$develMode = $this->getConfig('site','develMode');
+} else {
+	// Devel
+	$develMode = $this->getConfig('site','develMode');
 
-			if ($develMode === NULL){
-				$develMode = TRUE;
-			}
+	if ($develMode === NULL){
+		$develMode = TRUE;
+	}
 
-			$this->template->develMode = $develMode;
-		}
+	$this->template->develMode = $develMode;
+}
 ```
 and set definition in config.neon
 
@@ -137,12 +138,14 @@ TODO
 
 Make Latte macro and remove {if $develMode} & {$version}
 
+```smarty
 {build js="$basePath/js/app.min.js"}
 <script src="{$basePath}/js/netteForms.js"></script>
 <script src="{$basePath}/js/helpers.js"></script>
 <script src="{$basePath}/js/lightbox.js"></script>
 <script src="{$basePath}/js/layout.js"></script>
 {/build}
+```
 
 
 
@@ -150,10 +153,10 @@ License : MIT ./license.md
 
 Packages:
 ------------------------
-Nette: NewBSD or GNU 2 or 3 http://nette.org/en/license
-Grunt: MIT https://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
-Yeoman: BSD http://opensource.org/licenses/bsd-license.php
-grunt-contrib-mincss: MIT https://github.com/gruntjs/grunt-contrib-mincss/blob/master/LICENSE-MIT
+ Nette: NewBSD or GNU 2 or 3 http://nette.org/en/license
+ Grunt: MIT https://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+ Yeoman: BSD http://opensource.org/licenses/bsd-license.php
+ grunt-contrib-mincss: MIT https://github.com/gruntjs/grunt-contrib-mincss/blob/master/LICENSE-MIT
 
 
 
