@@ -1,3 +1,4 @@
+//  From : https://github.com/yeoman/yeoman/blob/master/cli/tasks/usemin.js
 
 var fs = require('fs'),
   path = require('path'),
