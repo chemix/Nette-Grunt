@@ -27,7 +27,7 @@ Concept
 ------------------------
 
 use Grunt for combine and minify CSS and JavaScript files for projects that runs
-on php - Nette with brilliant method from [Yoeman](http://yeoman.io)
+on php - Nette, with brilliant method from [Yoeman](http://yeoman.io)
 
 
 
@@ -120,16 +120,16 @@ common:
 now we update templates like this
 
 ```smarty
-	{if $develMode}
-		<!-- build:js {$basePath}/js/app.min.js -->
-		<script src="{$basePath}/js/netteForms.js"></script>
-		<script src="{$basePath}/js/helpers.js"></script>
-		<script src="{$basePath}/js/lightbox.js"></script>
-		<script src="{$basePath}/js/layout.js"></script>
-		<!-- endbuild -->
-	{else}
-		<script src="{$basePath}/js/app.min.js?{$version}"></script>
-	{/if}
+{if $develMode}
+	<!-- build:js {$basePath}/js/app.min.js -->
+	<script src="{$basePath}/js/netteForms.js"></script>
+	<script src="{$basePath}/js/helpers.js"></script>
+	<script src="{$basePath}/js/lightbox.js"></script>
+	<script src="{$basePath}/js/layout.js"></script>
+	<!-- endbuild -->
+{else}
+	<script src="{$basePath}/js/app.min.js?{$version}"></script>
+{/if}
 ```
 
 
@@ -149,14 +149,14 @@ Make Latte macro and remove {if $develMode} & {$version}
 
 
 
-License : MIT ./license.md
+License : MIT [license.md](https://github.com/chemix/Nette-Grunt/blob/master/license.md)
 
 Packages:
 ------------------------
- Nette: NewBSD or GNU 2 or 3 http://nette.org/en/license
- Grunt: MIT https://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
- Yeoman: BSD http://opensource.org/licenses/bsd-license.php
- grunt-contrib-mincss: MIT https://github.com/gruntjs/grunt-contrib-mincss/blob/master/LICENSE-MIT
+ - Nette: NewBSD or GNU 2 or 3 http://nette.org/en/license
+ - Grunt: MIT https://github.com/gruntjs/grunt/blob/master/LICENSE-MIT
+ - Yeoman: BSD http://opensource.org/licenses/bsd-license.php
+ - grunt-contrib-mincss: MIT https://github.com/gruntjs/grunt-contrib-mincss/blob/master/LICENSE-MIT
 
 
 
