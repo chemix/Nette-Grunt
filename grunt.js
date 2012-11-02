@@ -6,6 +6,7 @@ module.exports = function(grunt) {
   // Custom tasks
   grunt.loadTasks('./Bin/cli/');
 
+  // TODO: Use this banner for minified css & js
   // Project configuration.
   grunt.initConfig({
     pkg: '<json:project.json>',
@@ -17,6 +18,7 @@ module.exports = function(grunt) {
         '*/'
     },
 
+    // TODO: Use replace for key => value
     /*
     'nette-replace' : {
       '{$basePath}' : 'www',
@@ -26,11 +28,23 @@ module.exports = function(grunt) {
 
     // usemin handler should point to the file containing
     // the usemin blocks to be parsed
+    /**
+     * Example:
+     *
+     * 'usemin-handler': {
+     *     html: [
+     *         'app/templates/@layout.latte',
+     *         'app/templates/Folded/FileA.latte',
+     *         'app/templates/Folded/FileB.latte'
+     *         ]
+     *     }
+     *
+     */
     'usemin-handler': {
       html: [
-            'app/templates/@layout.latte',
+            'app/templates/@layout.latte'
             ]
-    },
+    }
 
   });
 
