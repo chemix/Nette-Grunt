@@ -44,6 +44,9 @@ clone repository
 download dependencies via composer
 `composer.phar install`
 
+download dependencies via npm
+`npm install`
+
 Use
 ------------------------
 
