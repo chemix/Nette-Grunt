@@ -5,7 +5,7 @@
  * @param string   $robots    tell robots how to index the content of a page (optional)
  * @param array    $flashes   flash messages
  * @param string   $version   app version string for media files
- * @param boolean  $develMode is app in devel mode ?
+ * @param boolean  $production is app in devel mode or production?
  *}
 
 <!DOCTYPE html>
@@ -15,36 +15,37 @@
 	<meta name="description" content="Nette Framework web application skeleton">
 	<meta name="robots" content="{$robots}" n:ifset="$robots">
 
-	<title>{#title|striptags|upper}Nette Application Skeleton{/#}</title>
+	<title>{block #title|striptags|upper}Nette Application Skeleton{/block}</title>
 
-	{if $develMode}
+	{if $production}
+		<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/screen.min.css?{$version}">
+	{else}
 		<!-- build:css {$basePath}/css/screen.min.css -->
 		<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/screen.css">
+		<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/homepage.css">
 		<!-- endbuild -->
-	{else}
-		<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/screen.min.css?{$version}">
 	{/if}
 
-	{if $develMode}
+	{if $production}
+		<link rel="stylesheet" media="print" href="{$basePath}/css/print.min.css?{$version}">
+	{else}
 		<!-- build:css {$basePath}/css/print.min.css -->
 		<link rel="stylesheet" media="print" href="{$basePath}/css/print.css">
 		<!-- endbuild -->
-	{else}
-		<link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/css/print.min.css?{$version}">
 	{/if}
 
 	<link rel="shortcut icon" href="{$basePath}/favicon.ico">
 
 	<script src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
 
-	{if $develMode}
+	{if $production}
+		<script src="{$basePath}/js/app.min.js?{$version}"></script>
+	{else}
 		<!-- build:js {$basePath}/js/app.min.js -->
 		<script src="{$basePath}/js/netteForms.js"></script>
 		<!-- endbuild -->
-	{else}
-		<script src="{$basePath}/js/app.min.js?{$version}"></script>
 	{/if}
-	{#head}{/#}
+	{block #head}{/block}
 </head>
 
 <body>

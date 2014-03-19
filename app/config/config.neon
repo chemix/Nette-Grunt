@@ -7,7 +7,7 @@
 common:
 	parameters:
 		site:
-			develMode: true
+			develMode: false
 			version: devel
 
 	php:
@@ -18,20 +18,13 @@ common:
 		application:
 			errorPresenter: Error
 
-		database:
-			dsn: 'mysql:host=localhost;dbname=test'
-			user:
-			password:
-
 		session:
 			expiration: 14 days
 
-
 	services:
-		authenticator: Authenticator
+		routerFactory: RouterFactory
+		router: @routerFactory::createRouter
 
-
-	factories:
 
 
 production < common:
