@@ -1,3 +1,7 @@
 *.sublime-workspace
 *.sublime-project
 composer.lock
+node_modules/*
+vendor/*
+!vendor/.htaccess
+.tmp/*
