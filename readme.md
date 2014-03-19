@@ -1,10 +1,7 @@
 GruntJS & Nette Framework Sandbox
 =================================
 
-it's dirty experimental concept, be careful ;-)
-
-based on Nette Sandbox https://github.com/nette/sandbox (15fbc489a82)
-
+based on [Nette Sandbox](https://github.com/nette/sandbox) and [grunt-usemin](https://github.com/yeoman/grunt-usemin)
 
 
 What is [Nette Framework](http://nette.org)?
@@ -27,8 +24,7 @@ Concept
 ------------------------
 
 use Grunt for combine and minify CSS and JavaScript files for projects that runs
-on php - Nette, with brilliant method from [Yoeman](http://yeoman.io)
-
+on php - Nette.
 
 
 Install
@@ -47,17 +43,25 @@ download dependencies via composer
 download dependencies via npm
 `npm install`
 
+
 Use
 ------------------------
 
-Edit project.json. In grunt.js update section 'usemin-handler'
-```JavaScript
-'usemin-handler': {
-	html: [
-		'app/templates/@layout.latte',
-		'app/templates/Registration/wizzard.latte',
-	]
-}
+In Gruntfile.coffee update paths if you use other
+```CoffeeScript
+
+  grunt.initConfig
+
+    useminPrepare:
+      html: ['app/templates/@layout.latte']
+      options:
+        dest: '.'
+
+    netteBasePath:
+      basePath: 'www'
+      options:
+        removeFromPath: ['app/templates/']
+
 ```
 
 those files will be checked for script or link block definitions
@@ -93,22 +97,8 @@ Now we have minified versions, but not in templates
 in BasePresenter we define version and mode for templates
 
 ```php
-$this->template->version = $this->getConfig('site', 'version');
-
-if ($this->context->parameters['productionMode']){
-	// Production
-	$this->template->develMode = FALSE;
-
-} else {
-	// Devel
-	$develMode = $this->getConfig('site','develMode');
-
-	if ($develMode === NULL){
-		$develMode = TRUE;
-	}
-
-	$this->template->develMode = $develMode;
-}
+$this->template->production = !$this->context->parameters['site']['develMode'];
+$this->template->version = $this->context->parameters['site']['version'];
 ```
 and set definition in config.neon
 
@@ -123,15 +113,15 @@ common:
 now we update templates like this
 
 ```smarty
-{if $develMode}
+{if $production}
+	<script src="{$basePath}/js/app.min.js?{$version}"></script>
+{else}
 	<!-- build:js {$basePath}/js/app.min.js -->
 	<script src="{$basePath}/js/netteForms.js"></script>
 	<script src="{$basePath}/js/helpers.js"></script>
 	<script src="{$basePath}/js/lightbox.js"></script>
 	<script src="{$basePath}/js/layout.js"></script>
 	<!-- endbuild -->
-{else}
-	<script src="{$basePath}/js/app.min.js?{$version}"></script>
 {/if}
 ```
 
