@@ -1,27 +1,12 @@
 {
-  "name": "Nette-Grunt",
-  "version": "0.1.0",
-  "description": "Example how combine Nette & Grunt",
-  "main": "grunt.js",
-  "directories": {
-    "test": "tests"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/chemix/Nette-Grunt.git"
-  },
-  "keywords": [
-    "Nette",
-    "Grunt",
-    "minification"
-  ],
-  "author": "Jan Cerny chemiX",
-  "license": "MIT",
-  "readmeFilename": "readme.md",
-  "dependencies": {
-  	"grunt-contrib-mincss": "0.3.2"
+  "name": "nette-grunt",
+  "version": "1.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.4",
+    "grunt-usemin": "~2.1.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.4.0",
+  	"grunt-contrib-cssmin": "~0.9.0",
+    "grunt-nette-basepath": "~0.2.0"
   }
 }
