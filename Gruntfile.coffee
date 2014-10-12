@@ -9,9 +9,11 @@ module.exports = (grunt) ->
         dest: '.'
 
     netteBasePath:
-      basePath: 'www'
-      options:
-        removeFromPath: ['app/templates/']
+      task:
+        basePath: 'www'
+        options:
+          removeFromPath: ['app/templates/']
+
 
   # These plugins provide necessary tasks.
   grunt.loadNpmTasks 'grunt-contrib-concat'
@@ -28,4 +30,3 @@ module.exports = (grunt) ->
     'uglify'
     'cssmin'
   ]
-
